@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invertir Arreglo</title>
+    <link rel="stylesheet" href="pages/ingo.css">
+</head>
+<body>
+
+    <h1>Invertir Arreglo</h1>
+
+    <label for="arreglo">Ingrese elementos del arreglo separados por coma:</label>
+    <input type="text" id="arreglo" placeholder="Ejemplo: 1, 2, 3">
+    <button onclick="invertirArreglo()">Invertir Arreglo</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function invertirArreglo() {
+            // Obtener el valor del arreglo ingresado por el usuario
+            const arregloIngresado = document.getElementById('arreglo').value;
+
+            // Convertir la entrada en un arreglo de números
+            const arreglo = arregloIngresado.split(',').map(num => parseInt(num.trim()));
+
+            // Verificar si todos los elementos son números
+            if (arreglo.every(num => !isNaN(num))) {
+                // Invertir el orden del arreglo
+                const arregloInvertido = arreglo.reverse();
+
+                // Mostrar el resultado
+                document.getElementById('resultado').textContent = `Arreglo invertido: [${arregloInvertido.join(', ')}]`;
+            } else {
+                // Mostrar un mensaje de error si la entrada no es válida
+                document.getElementById('resultado').textContent = 'Ingrese números válidos separados por coma.';
+            }
+        }
+    </script>
+<script src="java/ejercicios.js"></script>
+</body>
+</html>

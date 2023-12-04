@@ -1,0 +1,44 @@
+//lo para el cuerpo de la página //
+body{
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilo para encabezados */
+  h1, h2, h3 {
+    color: #0077cc;
+  }
+  
+  /* Estilo para enlaces */
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilo para contenedores de secciones */
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  /* Estilo para formularios */
+  form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Número en Arreglo</title>
+    <link rel="stylesheet" href="pages/ingo.css">
+</head>
+<body>
+
+    <h1>Verificar Número en Arreglo</h1>
+
+    <label for="numero">Ingrese un número:</label>
+    <input type="number" id="numero">
+    <button onclick="verificarNumero()">Verificar Número</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        // Arreglo dado
+        const arreglo = [5, 10, 3, 8, 15];
+
+        function verificarNumero() {
+            // Obtener el valor del número ingresado por el usuario
+            const numeroIngresado = parseInt(document.getElementById('numero').value);
+
+            // Verificar si el número es un número válido
+            if (!isNaN(numeroIngresado)) {
+                // Verificar si el número está presente en el arreglo
+                if (arreglo.includes(numeroIngresado)) {
+                    document.getElementById('resultado').textContent = `El número ${numeroIngresado} está presente en el arreglo.`;
+                } else {
+                    document.getElementById('resultado').textContent = `El número ${numeroIngresado} no está presente en el arreglo.`;
+                }
+            } else {
+                document.getElementById('resultado').textContent = 'Ingrese un número válido.';
+            }
+        }
+    </script>
+<script src="java/ejercicios.js"></script>
+</body>
+</html>

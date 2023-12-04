@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludo</title>
+    <link rel="stylesheet" href="pages/ingo.css">
+</head>
+<body>
+
+    <h1>Saludo</h1>
+
+    <label for="nombre">Ingrese su nombre:</label>
+    <input type="text" id="nombre">
+    <button onclick="saludar()">Saludar</button>
+
+    <p id="mensajeSaludo"></p>
+
+    <script>
+        function saludar() {
+            // Obtener el valor del campo de nombre
+            const nombre = document.getElementById('nombre').value;
+
+            // Verificar si se ingresó un nombre
+            if (nombre.trim() !== '') {
+                // Mostrar un mensaje de saludo
+                const mensaje = `¡Hola, ${nombre}! Bienvenido.`;
+                document.getElementById('mensajeSaludo').textContent = mensaje;
+            } else {
+                // Mostrar un mensaje predeterminado si no se ingresó un nombre
+                const mensaje = '¡Hola! Bienvenido.';
+                document.getElementById('mensajeSaludo').textContent = mensaje;
+            }
+        }
+    </script>
+<script src="java/ejercicios.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Dígitos Pares</title>
+    <link rel="stylesheet" href="pages/ingo.css">
+</head>
+<body>
+
+    <h1>Contador de Dígitos Pares</h1>
+
+    <label for="numero">Ingrese un número:</label>
+    <input type="number" id="numero">
+    <button onclick="contarDigitosPares()">Contar Dígitos Pares</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function contarDigitosPares() {
+            // Obtener el valor del número ingresado
+            const numero = document.getElementById('numero').value;
+
+            // Verificar si el número es válido
+            if (!isNaN(numero) && numero !== '') {
+                // Convertir el número a cadena para iterar sobre sus dígitos
+                const numeroComoCadena = numero.toString();
+
+                // Inicializar el contador de dígitos pares
+                let contadorPares = 0;
+
+                // Iterar sobre cada dígito y contar los pares
+                for (let i = 0; i < numeroComoCadena.length; i++) {
+                    const digito = parseInt(numeroComoCadena[i]);
+                    if (!isNaN(digito) && digito % 2 === 0) {
+                        contadorPares++;
+                    }
+                }
+
+                // Mostrar el resultado
+                document.getElementById('resultado').textContent = `Número de dígitos pares: ${contadorPares}`;
+            } else {
+                // Mostrar un mensaje de error si el número no es válido
+                document.getElementById('resultado').textContent = 'Ingrese un número válido.';
+            }
+        }
+    </script>
+    <script src="java/ejercicios.js"></script>
+
+</body>
+</html>

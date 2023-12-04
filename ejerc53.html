@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encontrar Máximo y Mínimo</title>
+    <link rel="stylesheet" href="pages/ingo.css">
+</head>
+<body>
+    <main>
+        
+    <h1>Encontrar Máximo y Mínimo</h1>
+    
+    <label for="numeros">Ingrese números separados por coma:</label>
+    <input type="text" id="numeros" placeholder="Ejemplo: 5, 10, 3, 8">
+    <button onclick="encontrarMaximoMinimo()">Encontrar Máximo y Mínimo</button>
+    <p id="resultado"></p>
+
+    <script>
+        function encontrarMaximoMinimo() {
+            // Obtener el valor de la entrada
+            const entrada = document.getElementById('numeros').value;
+
+            // Convertir la entrada en un arreglo de números
+            const numeros = entrada.split(',').map(num => parseInt(num.trim()));
+
+            // Verificar si todos los elementos son números
+            if (numeros.every(num => !isNaN(num))) {
+                // Encontrar el valor máximo y mínimo
+                const maximo = Math.max(...numeros);
+                const minimo = Math.min(...numeros);
+
+                // Mostrar el resultado
+                document.getElementById('resultado').textContent = `Máximo: ${maximo}, Mínimo: ${minimo}`;
+            } else {
+                // Mostrar un mensaje de error si la entrada no es válida
+                document.getElementById('resultado').textContent = 'Ingrese números válidos separados por coma.';
+            }
+        }
+    </script>
+ 
+</footer>
+<script src="java/ejercicios.js"></script>
+</body>
+</html>

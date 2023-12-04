@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Índices en Arreglo</title>
+    <link rel="stylesheet" href="pages/ingo.css">
+</head>
+<body>
+
+    <h1>Buscar Índices en Arreglo</h1>
+
+    <label for="valor">Ingrese un valor:</label>
+    <input type="number" id="valor">
+    <button onclick="buscarIndices()">Buscar Índices</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        // Arreglo dado
+        const arreglo = [1, 2, 3, 2, 4, 2, 5];
+
+        function buscarIndices() {
+            // Obtener el valor ingresado por el usuario
+            const valorIngresado = parseInt(document.getElementById('valor').value);
+
+            // Verificar si el valor es un número válido
+            if (!isNaN(valorIngresado)) {
+                // Encontrar los índices del valor en el arreglo
+                const indices = [];
+                for (let i = 0; i < arreglo.length; i++) {
+                    if (arreglo[i] === valorIngresado) {
+                        indices.push(i);
+                    }
+                }
+
+                // Mostrar el resultado
+                if (indices.length > 0) {
+                    document.getElementById('resultado').textContent = `Índice(s) del valor ${valorIngresado}: ${indices.join(', ')}`;
+                } else {
+                    document.getElementById('resultado').textContent = `El valor ${valorIngresado} no está presente en el arreglo.`;
+                }
+            } else {
+                // Mostrar un mensaje de error si el valor no es válido
+                document.getElementById('resultado').textContent = 'Ingrese un valor válido.';
+            }
+        }
+    </script>
+<script src="java/ejercicios.js"></script>
+</body>
+</html>

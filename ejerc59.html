@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de Números</title>
+    <link rel="stylesheet" href="pages/ingo.css">
+</head>
+<body>
+
+    <h1>Suma de Números</h1>
+
+    <label for="numero1">Ingrese el primer número:</label>
+    <input type="number" id="numero1">
+
+    <label for="numero2">Ingrese el segundo número:</label>
+    <input type="number" id="numero2">
+
+    <button onclick="sumar()">Sumar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function sumar() {
+            // Obtener los valores de los números ingresados por el usuario
+            const numero1 = parseFloat(document.getElementById('numero1').value);
+            const numero2 = parseFloat(document.getElementById('numero2').value);
+
+            // Verificar si se ingresaron números válidos
+            if (!isNaN(numero1) && !isNaN(numero2)) {
+                // Calcular la suma de los números
+                const suma = numero1 + numero2;
+
+                // Mostrar el resultado
+                document.getElementById('resultado').textContent = `La suma es: ${suma}`;
+            } else {
+                // Mostrar un mensaje de error si no se ingresaron números válidos
+                document.getElementById('resultado').textContent = 'Ingrese números válidos.';
+            }
+        }
+    </script>
+    <script src="java/ejercicios.js"></script>
+
+</body>
+</html>
+
